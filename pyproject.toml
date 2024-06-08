@@ -1,6 +1,6 @@
 [project]
 name = "api"
-dynamic = ["version"]
+version = "0.1.0"
 description = "Default template for Django Rest Api"
 authors = [{ name = "Yongky Putra", email = "dayongky@gmail.com" }]
 
@@ -28,7 +28,6 @@ dependencies = [
 requires-python = "==3.12.*"
 readme = "README.md"
 license = { text = "MIT" }
-version = "0.1.0"
 
 [tool.pdm]
 distribution = false
