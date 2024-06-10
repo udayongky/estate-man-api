@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
-APP_DIR = BASE_DIR / "core_apps"
+APP_DIR = BASE_DIR / "apps"
 
 local_env_file = path.join(BASE_DIR, ".envs", ".env.local")
 
@@ -34,7 +34,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "django_countries",
     "phonenumber_field",
-    "drf_yasg",
+    "drf_spectacular",
     "djoser",
     "social_django",
     "taggit",
@@ -44,7 +44,14 @@ THIRD_PARTY_APPS = [
     "django_celery_beat",
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "apps.issues",
+    "apps.users",
+    "apps.common",
+    "apps.profiles",
+    "apps.ratings",
+    "apps.posts",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
