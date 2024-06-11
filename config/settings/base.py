@@ -158,3 +158,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 TAGGIT_CASE_INSENSITIVE = True
 
 AUTH_USER_MODEL = "users.User"
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Estate Management API",
+    "DESCRIPTION": "An Estate Management API",
+    "VERSION": "v1",
+    "CONTACT": {"email": "yoyongdev@gmail.com"},
+    "LICENSE": {"name": "MIT License"},
+    "SERVE_PUBLIC": True,
+    "SERVE_INCLUDE_SCHEMA": True,
+    "SERVE_PERMISSIONS": ["rest_framework.permissions.AllowAny"],
+}
