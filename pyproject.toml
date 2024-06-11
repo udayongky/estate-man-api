@@ -53,11 +53,14 @@ dev-dependencies = [
 ]
 
 [tool.rye.scripts]
+# manage = { call = "manage" }
 start = { chain = ['migrate', 'collectstatic', 'runserver'] }
-manage = { call = "manage" }
 migrate = "python manage.py migrate --no-input"
 collectstatic = "python manage.py collectstatic --no-input"
 runserver = "python manage.py runserver localhost:8000"
+celeryworker = "watchfiles --filter python celery.__main__.main --args '-A config.celery_app worker -l INFO'"
+celerybeat = "watchfiles --filter python celery.__main__.main --args '-A config.celery_app beat -l INFO'"
+flower = 'watchfiles --filter python celery.__main__.main --args "-A config.celery_app -b \"${CELERY_BROKER_URL}\" flower --basic_auth=\"${CELERY_FLOWER_USER}:${CELERY_FLOWER_PASSWORD}\""'
 lint = "pre-commit run --all-files"
 docs = "mkdocs serve"
 test = "pytest -v tests"
