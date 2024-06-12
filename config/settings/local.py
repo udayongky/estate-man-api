@@ -19,7 +19,7 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY", "kifad4E98iXJdBWMTHlDH3pviY5d2-dwAhq98A
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0", "estate.test"]
 
 ADMIN_URL = getenv("DJANGO_ADMIN_URL")
 
